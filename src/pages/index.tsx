@@ -7,7 +7,7 @@ export default function Home() {
         <title>Mks-frontend-challenge</title>
       </Head>
       <main >
-      <h1>Mks-frontend-challenge</h1>
+      
       </main>
     </>
   )

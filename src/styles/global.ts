@@ -24,6 +24,10 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  main{
+    background-color: var(--BGColor);
+  }
+
   a {
     text-decoration: none;
     color: inherit;
