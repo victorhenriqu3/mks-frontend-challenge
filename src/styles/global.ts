@@ -6,10 +6,11 @@ export default createGlobalStyle`
     --BGColor: #f9f9f9;
     --BGCard: #ffffff;
     --CloseColor: #000000 ;
-    --BorderColor: rgba(0, 0, 0, 0.14)
+    --BorderColor: rgba(0, 0, 0, 0.14);
     --BorderInput: #BFBFBF;
     --BGPriceColor: #373737;
     --TextColor: #2C2C2C;
+    --BGFooter: #EEEEEE;
   } 
 
   * {
