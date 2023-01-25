@@ -13,8 +13,8 @@ const Header = () => {
         <Image width={24} height={24} src="/images/cart.svg" alt="cart" />
         <span>{`0`}</span>
       </button>
-      </HeaderContainer>
-  )
+    </HeaderContainer>
+  );
 };
 
 export default Header;

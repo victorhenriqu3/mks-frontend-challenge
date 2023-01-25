@@ -9,7 +9,7 @@ const Footer = () => {
         </span>
       </section>
     </FooterContainer>
-  )
+  );
 };
 
 export default Footer;
