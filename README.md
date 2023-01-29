@@ -25,14 +25,14 @@ que permite criar componentes de estilo ao escrever códigos CSS dentro de um ar
 # 🔨 Funcionalidades do projeto
 
 - `Loja`:
-  - [ ] `A lista de produtos deve ser buscada da API disponibilizada`
+  - [x] `A lista de produtos deve ser buscada da API disponibilizada`
   - [ ] `adicionar shimmer/skeleton enquanto estiver em loading`
 
 <br>
   
   * `Carrinho`: 
-    - [ ] `O carrinho deve conter todos os produtos selecionados`
-    - [ ] `adicionar a opção de aumentar a quantidade de cada produto selecionado`
+    - [x] `O carrinho deve conter todos os produtos selecionados`
+    - [x] `adicionar a opção de aumentar a quantidade de cada produto selecionado`
 
 <br>
 
