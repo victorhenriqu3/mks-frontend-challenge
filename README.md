@@ -26,7 +26,7 @@ que permite criar componentes de estilo ao escrever códigos CSS dentro de um ar
 
 - `Loja`:
   - [x] `A lista de produtos deve ser buscada da API disponibilizada`
-  - [ ] `adicionar shimmer/skeleton enquanto estiver em loading`
+  - [x] `adicionar shimmer/skeleton enquanto estiver em loading`
 
 <br>
   
@@ -35,6 +35,13 @@ que permite criar componentes de estilo ao escrever códigos CSS dentro de um ar
     - [x] `adicionar a opção de aumentar a quantidade de cada produto selecionado`
 
 <br>
+
+- `Testes`:
+  - [ ] testar adicionar item ao carrinho com `addToCart`.
+  - [ ] testar remover item do carrinho com `removeFromCart`.
+  - [ ] testar diminuir quantidade do item no carrinho com `removeFromCart`.
+  - [ ] testar `subTotals` no carrinho.
+  - [ ] testar quantidade de items indicados no Header.
 
 # ✍️ Autor
 
