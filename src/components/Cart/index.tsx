@@ -23,7 +23,9 @@ const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
   };
 
   const handleDecreaseCart = (Items: ICartItem) => {
-    dispatch(decreaseCart(Items));
+    Items.cartQuantity < 1
+      ? handleRemoveItem(Items)
+      : dispatch(decreaseCart(Items));
   };
 
   const handleRemoveItem = (Items: ICartItem) => {
@@ -79,7 +81,6 @@ const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
                       <button
                         type="button"
                         role="decrement-product"
-                        disabled={product.cartQuantity <= 1}
                         onClick={() => handleDecreaseCart(product)}
                       >
                         {`-`}
