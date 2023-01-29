@@ -3,8 +3,8 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CardCartItem, CartContainer } from "./styles";
-import { IDrawerCart } from "@/@types/Cart";
-import { subTotals } from "@/store/CartSlice";
+import { ICartItem, IDrawerCart } from "@/@types/Cart";
+import { addToCart, subTotals } from "@/store/CartSlice";
 import { RootState } from "@/store/store";
 
 const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
@@ -12,6 +12,10 @@ const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
     (state: RootState) => state.cart
   );
   const dispatch = useDispatch();
+
+  const handleincreaseCart = (Items: ICartItem) => {
+    dispatch(addToCart(Items));
+  };
 
   useEffect(() => {
     dispatch(subTotals());
@@ -66,7 +70,11 @@ const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
                         {`-`}
                       </button>
                       <p role="product-amount">{product.cartQuantity}</p>
-                      <button type="button" role="increment-product">
+                      <button
+                        type="button"
+                        role="increment-product"
+                        onClick={() => handleincreaseCart(product)}
+                      >
                         {`+`}
                       </button>
                     </div>
