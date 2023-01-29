@@ -103,3 +103,146 @@ export const CartContainer = styled.section`
     }
   }
 `;
+
+export const CardCartItem = styled.ul`
+  margin-top: 3rem;
+  width: 100%;
+  overflow: hidden;
+  max-height: 60%;
+  padding: 0.5rem 1rem;
+
+  &.scroll-element {
+    overflow-y: scroll;
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    color: var(--TextColor);
+    background: var(--BGCard);
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 1rem 0.5rem;
+
+    & + li {
+      margin-top: 2rem;
+    }
+
+    picture {
+      width: 15%;
+      margin-right: 1rem;
+
+      img {
+        align-self: center;
+        width: 100%;
+      }
+    }
+
+    p {
+      width: 25%;
+      font-size: 0.9rem;
+      margin-right: 2rem;
+    }
+
+    div {
+      position: relative;
+      display: flex;
+      align-items: center;
+      border-radius: 4px;
+      border: solid 1px var(--BorderColor);
+
+      p {
+        margin: 0 1rem;
+      }
+
+      span {
+        font-size: 0.8rem;
+        display: block;
+        margin: 0 0.5rem;
+
+        &:first-child {
+          font-size: 0.7rem;
+          position: absolute;
+          top: -1.2rem;
+          left: -0.5rem;
+        }
+      }
+
+      button {
+        background: none;
+        border: 0;
+        padding: 0.5rem 0.8rem;
+
+        svg {
+          font-size: 0.7rem;
+        }
+
+        &:hover {
+          filter: brightness(0.9);
+        }
+
+        &:disabled {
+          filter: brightness(0.5);
+        }
+      }
+    }
+
+    > span {
+      margin-left: 2rem;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    > img {
+      position: absolute;
+      top: -0.8rem;
+      right: -0.8rem;
+      font-size: 1rem;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    padding: 0.5rem;
+
+    li {
+      picture {
+        width: 18%;
+        margin-right: 0.5rem;
+      }
+      p {
+        font-size: 0.7rem;
+        margin-right: 0.5rem;
+      }
+
+      div {
+        span {
+          font-size: 0.6rem;
+          margin: 0 0.2rem;
+
+          &:first-child {
+            font-size: 0.6rem;
+          }
+        }
+        button {
+          font-size: 0.6rem;
+        }
+      }
+
+      > span {
+        margin-left: 1rem;
+        font-size: 0.7rem;
+      }
+
+      > img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+`;

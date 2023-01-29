@@ -1,8 +1,12 @@
 import Image from "next/image";
-import { CartContainer } from "./styles";
+
+import { useSelector } from "react-redux";
+import { CardCartItem, CartContainer } from "./styles";
 import { IDrawerCart } from "@/@types/Cart";
+import { RootState } from "@/store/store";
 
 const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
+  const { cartItems } = useSelector((state: RootState) => state.cart);
   return (
     <CartContainer className={`${isOpen && "isOpen"}`}>
       <div className="TopDrawer">
@@ -18,6 +22,62 @@ const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
           alt="Close Drawer"
         />
       </div>
+
+      {cartItems.length === 0 ? (
+        <div>
+          <p>{`O seu Carrinho está vazio`}</p>
+        </div>
+      ) : (
+        <>
+          <CardCartItem
+            className={`${cartItems.length > 4 && "scroll-element"}`}
+          >
+            {cartItems.map((product) => {
+              const subTotalItem = Number(product.price) * product.cartQuantity;
+
+              return (
+                <li key={product.id}>
+                  <picture>
+                    <img src={product.photo} alt={product.name} />
+                  </picture>
+
+                  <p>
+                    <span>{product.brand} </span>
+                    {product.name}
+                  </p>
+
+                  <section>
+                    <p>Qtd:</p>
+                    <div>
+                      <button
+                        type="button"
+                        role="decrement-product"
+                        disabled={product.cartQuantity <= 1}
+                      >
+                        {`-`}
+                      </button>
+                      <p role="product-amount">{product.cartQuantity}</p>
+                      <button type="button" role="increment-product">
+                        {`+`}
+                      </button>
+                    </div>
+                  </section>
+
+                  <span>R${subTotalItem.toLocaleString("pt-BR")}</span>
+
+                  <Image
+                    className="deleteItem"
+                    width={35}
+                    height={35}
+                    src="/images/Close_cart.svg"
+                    alt="Close Drawer"
+                  />
+                </li>
+              );
+            })}
+          </CardCartItem>
+        </>
+      )}
 
       <p>
         <span>Total:</span>
