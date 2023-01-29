@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CardCartItem, CartContainer } from "./styles";
 import { ICartItem, IDrawerCart } from "@/@types/Cart";
-import { addToCart, subTotals } from "@/store/CartSlice";
+import { addToCart, decreaseCart, subTotals } from "@/store/CartSlice";
 import { RootState } from "@/store/store";
 
 const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
@@ -13,13 +13,18 @@ const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
   );
   const dispatch = useDispatch();
 
-  const handleincreaseCart = (Items: ICartItem) => {
+  const handleIncreaseCart = (Items: ICartItem) => {
     dispatch(addToCart(Items));
+  };
+
+  const handleDecreaseCart = (Items: ICartItem) => {
+    dispatch(decreaseCart(Items));
   };
 
   useEffect(() => {
     dispatch(subTotals());
   }, [cartItems, dispatch]);
+
   return (
     <CartContainer className={`${isOpen && "isOpen"}`}>
       <div className="TopDrawer">
@@ -66,6 +71,7 @@ const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
                         type="button"
                         role="decrement-product"
                         disabled={product.cartQuantity <= 1}
+                        onClick={() => handleDecreaseCart(product)}
                       >
                         {`-`}
                       </button>
@@ -73,7 +79,7 @@ const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
                       <button
                         type="button"
                         role="increment-product"
-                        onClick={() => handleincreaseCart(product)}
+                        onClick={() => handleIncreaseCart(product)}
                       >
                         {`+`}
                       </button>
