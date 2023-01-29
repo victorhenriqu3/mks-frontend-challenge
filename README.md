@@ -37,9 +37,9 @@ que permite criar componentes de estilo ao escrever códigos CSS dentro de um ar
 <br>
 
 - `Testes`:
-  - [ ] testar adicionar item ao carrinho com `addToCart`.
+  - [x] testar adicionar item ao carrinho com `addToCart`.
   - [ ] testar remover item do carrinho com `removeFromCart`.
-  - [ ] testar diminuir quantidade do item no carrinho com `removeFromCart`.
+  - [x] testar diminuir quantidade do item no carrinho com `decreaseCart`.
   - [ ] testar `subTotals` no carrinho.
   - [ ] testar quantidade de items indicados no Header.
 
