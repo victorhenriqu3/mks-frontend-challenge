@@ -4,7 +4,12 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CardCartItem, CartContainer } from "./styles";
 import { ICartItem, IDrawerCart } from "@/@types/Cart";
-import { addToCart, decreaseCart, subTotals } from "@/store/CartSlice";
+import {
+  addToCart,
+  decreaseCart,
+  removeFromCart,
+  subTotals,
+} from "@/store/CartSlice";
 import { RootState } from "@/store/store";
 
 const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
@@ -19,6 +24,10 @@ const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
 
   const handleDecreaseCart = (Items: ICartItem) => {
     dispatch(decreaseCart(Items));
+  };
+
+  const handleRemoveItem = (Items: ICartItem) => {
+    dispatch(removeFromCart(Items));
   };
 
   useEffect(() => {
@@ -92,6 +101,7 @@ const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
                     className="deleteItem"
                     width={35}
                     height={35}
+                    onClick={() => handleRemoveItem(product)}
                     src="/images/Close_cart.svg"
                     alt="Close Drawer"
                   />
