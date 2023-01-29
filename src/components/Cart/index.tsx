@@ -1,12 +1,21 @@
 import Image from "next/image";
 
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { CardCartItem, CartContainer } from "./styles";
 import { IDrawerCart } from "@/@types/Cart";
+import { subTotals } from "@/store/CartSlice";
 import { RootState } from "@/store/store";
 
 const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
-  const { cartItems } = useSelector((state: RootState) => state.cart);
+  const { cartItems, cartTotalAmont } = useSelector(
+    (state: RootState) => state.cart
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(subTotals());
+  }, [cartItems, dispatch]);
   return (
     <CartContainer className={`${isOpen && "isOpen"}`}>
       <div className="TopDrawer">
@@ -81,7 +90,7 @@ const Cart = ({ isOpen, handleCloseCart }: IDrawerCart) => {
 
       <p>
         <span>Total:</span>
-        <span>R$ 0</span>
+        <span>R$ {cartTotalAmont.toLocaleString("pt-BR")}</span>
       </p>
 
       <button type="button">Finalizar Compra</button>
