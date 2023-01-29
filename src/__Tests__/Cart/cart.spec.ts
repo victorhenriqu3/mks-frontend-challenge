@@ -1,5 +1,5 @@
 import { ICartItem } from "@/@types/Cart";
-import { addToCart, decreaseCart } from "@/store/CartSlice";
+import { addToCart, decreaseCart, removeFromCart } from "@/store/CartSlice";
 import { store } from "@/store/store";
 
 describe("Testing CartSliceReducer actions ", () => {
@@ -61,6 +61,25 @@ describe("Testing CartSliceReducer actions ", () => {
       store.dispatch(decreaseCart(MockItem));
       const state = store.getState().cart;
       expect(state.cartItems[0].cartQuantity).toEqual(1);
+    });
+  });
+
+  describe("testing removeFromCart feature", () => {
+    it("Should remove an item from the cart and verifies if the cartItems is empty", () => {
+      const MockItem = {
+        id: 1,
+        name: "Iphone 11 128 GB",
+        brand: "Apple",
+        description:
+          "Grave vídeos 4K, faça belos retratos e capture paisagens inteiras com o novo sistema de câmera dupla.",
+        photo:
+          "https://mks-sistemas.nyc3.digitaloceanspaces.com/products/iphone11x128.webp",
+        price: "5000.00",
+      } as ICartItem;
+      store.dispatch(removeFromCart(MockItem));
+
+      const state = store.getState().cart;
+      expect(state.cartItems).toEqual([]);
     });
   });
 });
