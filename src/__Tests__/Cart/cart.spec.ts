@@ -1,5 +1,10 @@
 import { ICartItem } from "@/@types/Cart";
-import { addToCart, decreaseCart, removeFromCart } from "@/store/CartSlice";
+import {
+  addToCart,
+  decreaseCart,
+  removeFromCart,
+  subTotals,
+} from "@/store/CartSlice";
 import { store } from "@/store/store";
 
 describe("Testing CartSliceReducer actions ", () => {
@@ -42,6 +47,11 @@ describe("Testing CartSliceReducer actions ", () => {
       store.dispatch(addToCart(MockItem));
       const state = store.getState().cart;
       expect(state.cartItems[0].cartQuantity).toEqual(2);
+    });
+    it("Should return the value of the subtotals correctly", () => {
+      store.dispatch(subTotals());
+      const state = store.getState().cart;
+      expect(state.cartTotalAmont.toLocaleString("pt-BR")).toEqual("10.000");
     });
   });
 
