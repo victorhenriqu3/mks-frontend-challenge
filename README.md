@@ -80,7 +80,7 @@ yarn test
   - [x] testar remover item do carrinho com `removeFromCart`.
   - [x] testar diminuir quantidade do item no carrinho com `decreaseCart`.
   - [x] testar `subTotals` no carrinho.
-  - [ ] testar quantidade de items indicados no Header.
+  - [x] testar quantidade de items indicados no Header.
 
 # ✍️ Autor
 
