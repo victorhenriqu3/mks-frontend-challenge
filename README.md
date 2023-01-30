@@ -8,9 +8,15 @@ estilização e Jest para testes unitários.
 
 # 🖵 Layout
 
-|                    🖥️ Desktop                    |                    📱 Mobile                    |
-| :----------------------------------------------: | :---------------------------------------------: |
-| ![Desktop Preview](./public/preview/Desktop.png) | ![Mobile Preview](./public/preview/Mobile.png)) |
+|                    🖥️ Desktop                    |                   📱 Mobile                    |
+| :----------------------------------------------: | :--------------------------------------------: |
+| ![Desktop Preview](./public/preview/Desktop.png) | ![Mobile Preview](./public/preview/Mobile.png) |
+
+📍 Link do Preview: [https://mks-frontend-challenge-victorhenriqu3.vercel.app/](https://mks-frontend-challenge-victorhenriqu3.vercel.app/)
+
+📍 Link do Repositório: [https://github.com/victorhenriqu3/mks-frontend-challenge](https://github.com/victorhenriqu3/mks-frontend-challenge)
+
+<br>
 
 # ⚙️ Tecnologias
 
