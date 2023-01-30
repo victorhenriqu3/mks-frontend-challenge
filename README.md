@@ -6,6 +6,12 @@ estilização e Jest para testes unitários.
 
 <br>
 
+# 🖵 Layout
+
+|                    🖥️ Desktop                    |                    📱 Mobile                    |
+| :----------------------------------------------: | :---------------------------------------------: |
+| ![Desktop Preview](./public/preview/Desktop.png) | ![Mobile Preview](./public/preview/Mobile.png)) |
+
 # ⚙️ Tecnologias
 
 [React JS](https://pt-br.reactjs.org/) - Biblioteca JavaScript criada para construir telas de forma declarativa.
@@ -21,6 +27,39 @@ várias funcionalidades em cima do React.
 que permite criar componentes de estilo ao escrever códigos CSS dentro de um arquivo Typescript.
 
  <br>
+
+# 🏁 Iniciando o Projeto
+
+1 - Clone o Projeto e entre na pasta respectiva
+
+```bash
+git clone https://github.com/victorhenriqu3/mks-frontend-challenge
+cd mks-frontend-challenge
+```
+
+2 - Instale as dependências
+
+```bash
+yarn add
+
+## ou se preferir pode utilizar npm, vai da sua escolha
+
+npm install
+```
+
+3 - Inicialize o Projeto
+
+```bash
+yarn dev
+```
+
+4 - 📦 Extra: Para realizar os testes Unitários
+
+```bash
+yarn test
+```
+
+<br>
 
 # 🔨 Funcionalidades do projeto
 
