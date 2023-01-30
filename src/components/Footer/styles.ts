@@ -6,6 +6,7 @@ export const FooterContainer = styled.footer`
   width: 100vw;
   height: 34px;
   background-color: var(--BGFooter);
+  position: fixed;
 
   section {
     max-width: 80vw;
@@ -22,6 +23,7 @@ export const FooterContainer = styled.footer`
   }
 
   @media (max-width: 1200px) {
+    position: fixed;
     section {
       max-width: 100vw;
       font-size: 0.8rem;
