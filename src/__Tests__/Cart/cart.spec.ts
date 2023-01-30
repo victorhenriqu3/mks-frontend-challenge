@@ -48,10 +48,17 @@ describe("Testing CartSliceReducer actions ", () => {
       const state = store.getState().cart;
       expect(state.cartItems[0].cartQuantity).toEqual(2);
     });
+
     it("Should return the value of the subtotals correctly", () => {
       store.dispatch(subTotals());
       const state = store.getState().cart;
       expect(state.cartTotalAmont.toLocaleString("pt-BR")).toEqual("10.000");
+    });
+
+    it("Should return the number of the cartTotalQuantity correctly ", () => {
+      store.dispatch(subTotals());
+      const state = store.getState().cart;
+      expect(state.cartTotalQuantity).toEqual(2);
     });
   });
 
