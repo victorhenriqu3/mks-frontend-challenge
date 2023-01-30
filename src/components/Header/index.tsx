@@ -17,7 +17,7 @@ const Header = () => {
         </div>
 
         <button type="button" onClick={() => setIsOpen(!isOpen)}>
-          <Image width={24} height={24} src="/images/cart.svg" alt="cart" />
+          <Image width={24} height={24} src="/images/Cart.svg" alt="cart" />
           <span>{cartTotalQuantity}</span>
         </button>
       </HeaderContainer>
